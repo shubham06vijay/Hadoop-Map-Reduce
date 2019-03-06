@@ -1,0 +1,15 @@
+hadoop fs -rm -r -f /SachinViews
+
+hadoop fs -mkdir /SachinViews
+
+hadoop fs -mkdir /SachinViews/Input
+
+hadoop fs -put '/home/hadoop/Desktop/DSAssg/A1/input_data/input.txt' /SachinViews/Input
+
+javac -classpath ${HADOOP_CLASSPATH} -d '/home/hadoop/Desktop/DSAssg/A1/Classes' '/home/hadoop/Desktop/DSAssg/A1/q1.java' 
+
+jar -cvf firstTut.jar -C '/home/hadoop/Desktop/DSAssg/A1/Classes' .
+
+hadoop jar '/home/hadoop/Desktop/DSAssg/A1/firstTut.jar' q1 /SachinViews/Input /SachinViews/Output
+
+hadoop dfs -cat /SachinViews/Output/*

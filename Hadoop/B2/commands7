@@ -1,0 +1,17 @@
+hadoop fs -rm -r -f /hostelFind
+
+hadoop fs -mkdir /hostelFind
+
+hadoop fs -mkdir /hostelFind/Input1
+hadoop fs -mkdir /hostelFind/Input2
+
+hadoop fs -put '/home/hadoop/Desktop/DSAssg/B2/input_data1/input.txt' /hostelFind/Input1
+hadoop fs -put '/home/hadoop/Desktop/DSAssg/B2/input_data2/input.txt' /hostelFind/Input2
+
+javac -classpath ${HADOOP_CLASSPATH} -d '/home/hadoop/Desktop/DSAssg/B2/Classes' '/home/hadoop/Desktop/DSAssg/B2/q7.java' 
+
+jar -cvf firstTut.jar -C '/home/hadoop/Desktop/DSAssg/B2/Classes' .
+
+hadoop jar '/home/hadoop/Desktop/DSAssg/B2/firstTut.jar' q7 /hostelFind/Input1 /hostelFind/Input2 /hostelFind/Output
+
+hadoop dfs -cat /hostelFind/Output/*

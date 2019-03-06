@@ -1,0 +1,15 @@
+hadoop fs -rm -r -f /playerNames
+
+hadoop fs -mkdir /playerNames
+
+hadoop fs -mkdir /playerNames/Input
+
+hadoop fs -put '/home/hadoop/Desktop/DSAssg/A5/input_data/input.txt' /playerNames/Input
+
+javac -classpath ${HADOOP_CLASSPATH} -d '/home/hadoop/Desktop/DSAssg/A5/Classes' '/home/hadoop/Desktop/DSAssg/A5/q5.java' 
+
+jar -cvf firstTut.jar -C '/home/hadoop/Desktop/DSAssg/A5/Classes' .
+
+hadoop jar '/home/hadoop/Desktop/DSAssg/A5/firstTut.jar' q5 /playerNames/Input /playerNames/Output
+
+hadoop dfs -cat /playerNames/Output/*

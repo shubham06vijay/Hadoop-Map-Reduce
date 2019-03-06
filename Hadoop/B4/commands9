@@ -1,0 +1,15 @@
+hadoop fs -rm -r -f /Courses
+
+hadoop fs -mkdir /Courses
+
+hadoop fs -mkdir /Courses/Input
+
+hadoop fs -put '/home/hadoop/Desktop/DSAssg/B4/input_data1/input.txt' /Courses/Input
+
+javac -classpath ${HADOOP_CLASSPATH} -d '/home/hadoop/Desktop/DSAssg/B4/Classes' '/home/hadoop/Desktop/DSAssg/B4/q9.java' 
+
+jar -cvf firstTut.jar -C '/home/hadoop/Desktop/DSAssg/B4/Classes' .
+
+hadoop jar '/home/hadoop/Desktop/DSAssg/B4/firstTut.jar' q9 /Courses/Input /Courses/Output
+
+hadoop dfs -cat /Courses/Output/*

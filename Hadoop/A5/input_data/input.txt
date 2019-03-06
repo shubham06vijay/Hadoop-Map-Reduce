@@ -1,0 +1,9 @@
+100,Statistic,M,89,v sehwag,ODI,320,3000,9
+200,Statistic,PC,99,vvs laxman,TEST,200,2500,12
+300,Statistic,M,79,sachin tendulkar,ODI,400,5000,9
+200,Statistic,M,99,vvs laxman,ODI,89,1500,5
+150,Statistic,M,79,sachin tendulkar,ODI,400,5000,9
+270,Statistic,M,79,sachin tendulkar,ODI,400,5000,9
+275,Statistic,M,100,M.S Dhoni,TEST,35,8800,4
+382,Statistic,M,79,sachin tendulkar,TEST,700,9200,36
+276,Statistic,M,100,Saurav Ganguly,ODI,35,7200,350

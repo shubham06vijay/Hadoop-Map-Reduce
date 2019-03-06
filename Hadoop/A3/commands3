@@ -1,0 +1,14 @@
+hadoop fs -rm -r -f /MobileViews
+hadoop fs -mkdir /MobileViews
+
+hadoop fs -mkdir /MobileViews/Input
+
+hadoop fs -put '/home/hadoop/Desktop/DSAssg/A3/input_data/input.txt' /MobileViews/Input
+
+javac -classpath ${HADOOP_CLASSPATH} -d '/home/hadoop/Desktop/DSAssg/A3/Classes' '/home/hadoop/Desktop/DSAssg/A3/q3.java' 
+
+jar -cvf firstTut.jar -C '/home/hadoop/Desktop/DSAssg/A3/Classes' .
+
+hadoop jar '/home/hadoop/Desktop/DSAssg/A3/firstTut.jar' q3 /MobileViews/Input /MobileViews/Output
+
+hadoop dfs -cat /MobileViews/Output/*
